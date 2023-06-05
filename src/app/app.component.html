@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Esse eu Já Li</title>
-</head>
-<body>
-  <span>{{ title }} app is running!</span>
-  <app-lista-de-livros></app-lista-de-livros>
-  <app-login></app-login>
-</body>
-</html>
+<header>
+  <app-menu></app-menu>
+</header>
+<main>
+  <router-outlet>Conteúdo</router-outlet>
+</main>
+<app-footer></app-footer>
