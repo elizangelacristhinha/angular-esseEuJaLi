@@ -7,6 +7,8 @@ import { ListaDeLivrosComponent } from './lista-de-livros/lista-de-livros.compon
 import { LoginComponent } from './lista-de-livros/login/login.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
+import { ListarLivrosComponent } from './listar-livros/listar-livros.component';
+import { TableBasicComponent } from './table-basic/table-basic.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { FooterComponent } from './footer/footer.component';
     ListaDeLivrosComponent,
     LoginComponent,
     MenuComponent,
-    FooterComponent
+    FooterComponent,
+    ListarLivrosComponent,
+    TableBasicComponent
   ],
   imports: [
     BrowserModule,
