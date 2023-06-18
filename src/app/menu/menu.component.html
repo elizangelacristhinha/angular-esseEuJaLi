@@ -1,15 +1,18 @@
 <div class="navbar-fixed" style="z-index: 100 !important">
   <nav>
-    <div class="nav-wrapper amber accent-4">
+    <div class="nav-wrapper">
       <div class="container">
-        <a href="#!" class="brand-logo">Logo</a>
+        <a href="#!" class="brand-logo">
+          <img src="/assets/resources/images/logo.png"
+          class="img-responsive"
+          height="120em"class="my-logo"/></a>
         <a href="#!" data-target="mobile-demo" class="sidenav-trigger">
           <i class="material-icons">menu</i>
         </a>
 
         <ul class="right hide-on-med-and-down">
-          <li><a href="sass.html">Visualizar lista de livros</a></li>
-          <li><a href="badges.html">Visualizar livro</a></li>
+          <li><a routerLink="/listaDeLivros">Visualizar lista de livros</a></li>
+          <li><a routerLink="/visualizarLivro">Visualizar livro</a></li>
           <li><a href="badges.html">Marcar leitura de livro</a></li>
           <li><a href="badges.html">Visualizar ranking usr</a></li>
           <li><a href="badges.html">Visualizar pontos e troféus usr</a></li>
@@ -17,7 +20,7 @@
       </div>
     </div>
   </nav>
-  <ul class="sidenav amber" id="mobile-demo" #mobile>
+  <ul class="sidenav" id="mobile-demo" #mobile>
     <div class="row">
       <div class="col s8 offset-s2">
         <div class="center">
@@ -25,8 +28,8 @@
         </div>
       </div>
     </div>
-    <li><a href="sass.html">Visualizar lista de livros</a></li>
-    <li><a href="badges.html">Visualizar livro</a></li>
+    <li><a routerLink="/listaDeLivros">Visualizar lista de livros</a></li>
+    <li><a routerLink="/visualizarLivro">Visualizar livro</a></li>
     <li><a href="badges.html">Marcar leitura de livro</a></li>
     <li><a href="badges.html">Visualizar ranking usr</a></li>
     <li><a href="badges.html">Visualizar pontos e troféus usr</a></li>

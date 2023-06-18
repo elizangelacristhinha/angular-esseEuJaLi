@@ -1,24 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 
-//import { Constants } from '../util/constants';
-//import { LoginService } from './../services/login.service';
+import { Constants } from '../util/constants';
+import { LoginService } from './../services/login.service';
 import { Router } from '@angular/router';
 import { User } from '../model/user';
-//import { WebStorageUtil } from '../util/web-storage-util';
+import { WebStorageUtil } from '../util/web-storage-util';
 
 @Component({
   selector: 'app-login',
   templateUrl: './tela-login.component.html',
-  styleUrls: ['./tela-login.component.css'],
+  styleUrls: ['./tela-login.component.scss'],
 })
 export class TelaLoginComponent implements OnInit {
   user!: User;
   loginUser!: User;
-  //constructor(private loginService: LoginService) {}
+  constructor(private loginService: LoginService) {}
 
   ngOnInit(): void {
     this.loginUser = new User('', '');
-    //this.user = WebStorageUtil.get(Constants.USERNAME_KEY);
+    this.user = WebStorageUtil.get(Constants.USERNAME_KEY);
   }
 
   onLogin() {
@@ -26,7 +26,7 @@ export class TelaLoginComponent implements OnInit {
       this.loginUser.username === this.user.username &&
       this.loginUser.password === this.user.password
     ) {
-      //this.loginService.login();
+      this.loginService.login();
     } else {
       alert(
         'Oppsss! Por favor, verifique seu nome de usuário ou senha e tente novamente!'

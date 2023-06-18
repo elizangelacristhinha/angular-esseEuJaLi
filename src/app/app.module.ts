@@ -7,6 +7,7 @@ import { ListaDeLivrosComponent } from './lista-de-livros/lista-de-livros.compon
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { TelaLoginComponent } from './tela-login/tela-login.component';
+import { VisualizarLivroComponent } from './visualizar-livro/visualizar-livro.component';
 //import { ModelComponent } from './model/model.component';
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { TelaLoginComponent } from './tela-login/tela-login.component';
     ListaDeLivrosComponent,
     MenuComponent,
     FooterComponent,
-    TelaLoginComponent//,
+    TelaLoginComponent,
+    VisualizarLivroComponent//,
     //ModelComponent
   ],
   imports: [
