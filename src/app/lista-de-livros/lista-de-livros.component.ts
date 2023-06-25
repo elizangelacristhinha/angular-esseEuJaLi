@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ListaDeLivrosService } from './lista-de-livros.service';
+import { ListaDeLivros } from './lista-de-livros';
 
 @Component({
   selector: 'app-lista-de-livros',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaDeLivrosComponent implements OnInit {
 
-  constructor() { }
+  public livros: ListaDeLivros[];
 
+  constructor(private _listaDeLivrosService: ListaDeLivrosService) { }
+ 
   ngOnInit(): void {
-  }
 
+    this._listaDeLivrosService.getListaDeLivros()
+    .subscribe(
+        retorno => {
+          this.livros = retorno.map (iten =>
+           {
+                return new ListaDeLivros(
+                   iten.id,
+                   iten.titulo,
+                   iten.autor
+                )
+            }
+          )
+        }
+    ) 
+  }
 }

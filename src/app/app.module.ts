@@ -13,6 +13,7 @@ import { ExponentialStrengthPipe } from './pipes/exponential-strength.pipe';
 import { CadastrarUsuarioComponent } from './cadastrar-usuario/cadastrar-usuario.component';
 //import { ModelComponent } from './model/model.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     ExponentialStrengthPipe,
@@ -30,6 +31,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule,
   ],
   providers: [],
