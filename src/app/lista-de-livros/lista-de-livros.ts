@@ -10,12 +10,3 @@ export class ListaDeLivros {
         someField: false;
     }
 }
-/*
-
-class MyClass {
-  someField: boolean = false;
-  constructor() {
-    return { someField: true };
-  }
-}
-*/

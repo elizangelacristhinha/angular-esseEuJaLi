@@ -1,1 +1,23 @@
-<p>lista-de-livros works!</p>
+<form class="col s12" (ngSubmit)="visualizar()">
+        <table>
+            <thead>
+                <td>ID</td>
+                <td>TÍTULO</td>
+                <td>AUTOR</td>
+                <td></td>
+            </thead>
+            <tbody>
+                <tr *ngFor="let livros of listaDeLivros">
+                    <td>{{livros.id}}</td>
+                    <td>{{livros.titulo}}</td>
+                    <td>{{livros.autor}}</td>
+                    <td>
+                      <button class="btn waves-effect waves-light" type="submit">
+                        visualizar
+                        <i class="material-icons right">send</i>
+                      </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+  </form>

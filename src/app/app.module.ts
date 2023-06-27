@@ -14,6 +14,7 @@ import { CadastrarUsuarioComponent } from './cadastrar-usuario/cadastrar-usuario
 //import { ModelComponent } from './model/model.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { LivroComponent } from './lista-de-livros/livro/livro.component';
 @NgModule({
   declarations: [
     ExponentialStrengthPipe,
@@ -25,8 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     UserComponent,
     TelaLoginComponent,
     VisualizarLivroComponent,
-    CadastrarUsuarioComponent//,
-    //ModelComponent
+    CadastrarUsuarioComponent,
+    LivroComponent
   ],
   imports: [
     BrowserModule,
