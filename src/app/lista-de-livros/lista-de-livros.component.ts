@@ -13,8 +13,7 @@ export class ListaDeLivrosComponent implements OnInit {
 
   constructor(
     private router: Router, 
-    private _listaDeLivrosService: ListaDeLivrosService,
-    private userPromiseService: UserPromiseService
+    private _listaDeLivrosService: ListaDeLivrosService
     ) { }
 
   ngOnInit(): void {
