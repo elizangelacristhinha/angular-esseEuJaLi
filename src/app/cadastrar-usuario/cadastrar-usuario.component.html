@@ -16,20 +16,7 @@
     </div>
     <form class="col s12" #form="ngForm" (submit)="onSubmit()">
       <div class="input-field col s12">
-        <input
-          id="input-name"
-          name="input-name"
-          type="text"
-          class="validate"
-          (ngModel)="this.user.name"
-          pattern="^(\s?[A-ZÀ-Ú][a-zà-ú]*)+(\s[a-zà-ú]*)?(\s[A-ZÀ-Ú][a-zà-ú]*)+"
-          #name="ngModel"
-          required
-        />
         <label for="input-name">Nome Completo *</label>
-        <div class="red-text" [hidden]="name.valid || name.untouched">
-          Por favor, informe o seu nome completo.
-        </div>
         <div class="red-text">
           Por favor, o nome completo é obrigatório.
         </div>

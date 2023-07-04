@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 const routes: Routes = [
   { path: '', component: TelaLoginComponent },
   { path: 'listaDeLivros', component: ListaDeLivrosComponent },
-  { path: 'visualizarLivro', component: VisualizarLivroComponent },
+  { path: 'visualizarLivro', component: LivroComponent },
   { path: 'cadastrarUsuario', component: CadastrarUsuarioComponent },];
 
 @NgModule({

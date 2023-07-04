@@ -1,6 +1,14 @@
-<p>livro works!</p>
-<button (click)="listarTodosLivros()">GET</button>
-<button (click)="listarLivroPorId()">GET /id</button>
-<button (click)="adicionarLivro()">POST</button>
-<button (click)="alterarLivro()">PUT</button>
-<button (click)="excluirLivro()">DELETE</button>
+<table>
+    <thead>
+        <td>ID</td>
+        <td>TÍTULO</td>
+        <td>AUTOR</td>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{livro.id}}</td>
+            <td>{{livro.titulo}}</td>
+            <td>{{livro.autor}}</td>
+        </tr>
+    </tbody>
+</table>
