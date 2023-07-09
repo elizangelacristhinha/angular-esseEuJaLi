@@ -16,8 +16,6 @@ export class ListaDeLivrosComponent implements OnInit {
   public livros: Observable<ListaDeLivros>;
   public visivel: boolean;
   public livro: { id: string, titulo: string, autor: string };
-  public id: any = 1;
-  parLivro: { id: string, titulo: string, autor: string }
 
   constructor(
     private router: Router, 

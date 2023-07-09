@@ -14,19 +14,11 @@ import { DataService } from 'src/app/data.service';
 
 export class LivroComponent implements OnInit {
 
- // @Input() livro: { id: string, titulo: string, autor: string }
  @Input() public livro: ListaDeLivros;
   public listaDeLivros: ListaDeLivros[];
   public retorno: ListaDeLivros[];
   public livros: Observable<ListaDeLivros>;
   public visivel: boolean;
-  
-  public cont:number = 0;
-  public livros1: ListaDeLivros;
-
-  @Input() idLivro: any;
-  @Input('account-id') id: string;
-  @Output() aoTransferir = new EventEmitter<any>();
 
   constructor(
     private livroPromiseService: LivroPromiseService,
@@ -40,14 +32,10 @@ export class LivroComponent implements OnInit {
     }
 
   ngOnInit(): void {
-    console.log('-------------------');
     this.livro = this.dataService.getLivro(); 
-    console.log("id" + this.livro.id);
-
   }
 
   onClick(){
-    console.log('onclick');
   }
   
   listarTodosLivros(){
@@ -55,7 +43,7 @@ export class LivroComponent implements OnInit {
   }
 
   listarLivroPorId(){
-    this.livroPromiseService.listarProdutoPorId();
+
   }
 
   adicionarLivro(){

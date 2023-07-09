@@ -14,7 +14,7 @@ export class Shared {
     }
 
     //usuário definido na forma literal
-    let user = new User(Constants.USERNAME_KEY, 'qwerty', true);
+    let user = new User(Constants.USERNAME_KEY, '123', true);
 
     localStorage.setItem(Constants.USERNAME_KEY, JSON.stringify(user));
     localStorage.setItem(Constants.USERS_KEY, JSON.stringify([]));

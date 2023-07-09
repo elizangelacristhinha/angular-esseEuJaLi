@@ -20,10 +20,5 @@ export class ListaDeLivrosService {
   {
     return this._httpClient.get<ListaDeLivros>(`${this.url}/${id}`);
   }
-
-  getLivro2(id: string): Observable<ListaDeLivros[]>
-  {
-    return this._httpClient.get<ListaDeLivros[]>(`${this.url}/${id}`);
-  }
 }
 

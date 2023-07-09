@@ -12,8 +12,12 @@ import { WebStorageUtil } from '../util/web-storage-util';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+  public username:string;
+  public password:string;
+
   user!: User;
-  loginUser!: User;
+  public loginUser!: User;
+  
   constructor(private loginService: LoginService) {}
 
   ngOnInit(): void {
@@ -23,10 +27,10 @@ export class LoginComponent implements OnInit {
 
   onLogin() {
     if (
-      this.loginUser.username === this.user.username &&
-      this.loginUser.password === this.user.password
+      this.username === this.user.username &&
+      this.password === this.user.password
     ) {
-      this.loginService.login();
+      this.loginService.login2(this.user.username);
     } else {
       alert(
         'Oppsss! Por favor, verifique seu nome de usuário ou senha e tente novamente!'

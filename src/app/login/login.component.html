@@ -13,13 +13,13 @@
     <form class="col s12" (ngSubmit)="onLogin()">
       <div class="row">
         <div class="input-field col s12">
-          <input
-            id="input-username"
-            name="input-username"
-            type="text"
-            class="validate"
-            (ngModel)="this.loginUser.username"
-          />
+          <input id="input-username" name="input-username"
+            type="text" class="validate"
+            (ngModel)="this.username"/>
+
+            <input type="password" id="senha" class="form-control" 
+            formControlName="senha" requiredminlength="8">
+
           <label for="input-username">Nome de Usuário</label>
         </div>
       </div>
@@ -30,7 +30,7 @@
             name="input-password"
             type="password"
             class="validate"
-            (ngModel)="this.loginUser.password"
+            (ngModel)="this.password"
           />
           <label for="input-password">Senha</label>
         </div>

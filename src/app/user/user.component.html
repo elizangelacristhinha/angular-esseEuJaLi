@@ -9,19 +9,18 @@
         class="card-panel white-text"
         [class.red]="!this.isSuccess"
         [class.blue]="this.isSuccess"
-        *ngIf="this.isShowMessage"
-      >
+        *ngIf="this.isShowMessage">
         {{ this.message }}
       </div>
     </div>
-    <form class="col s12" form="ngForm" (submit)="onSubmit()">
+    <form class="col s12" form="ngForm">
       <div class="input-field col s12">
         <input
           id="input-name"
           name="input-name"
           type="text"
           class="validate"
-          (ngModel)="this.user.name"
+          (ngModel)="this.user.nome"
           pattern="^(\s?[A-ZÀ-Ú][a-zà-ú]*)+(\s[a-zà-ú]*)?(\s[A-ZÀ-Ú][a-zà-ú]*)+"
 
           required
@@ -84,35 +83,6 @@
         </div>
       </div>
 
-      <div class="input-field col s12 l6">
-        <input
-          id="input-cpf"
-          name="input-cpf"
-          type="text"
-          class="validate"
-          (ngModel)="this.user.cpf"
-          pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
-          mask="CPF_CNPJ"
-          dropSpecialCharacters="false"
-          cpf="ngModel"
-          required
-        />
-        <label for="input-cpf">CPF *</label>
-        <div class="red-text" hidden="cpf.valid || cpf.untouched">
-          Por favor, informe o seu CPF.
-        </div>
-      </div>
-
-      <div class="input-field col s12 l6">
-        <input
-          id="input-birthday"
-          name="input-birthday"
-          type="date"
-          class="validate"
-          (ngModel)="this.user.birthday"/>
-        <label for="input-birthday">Data de Nascimento</label>
-      </div>
-
       <button
         class="btn waves-effect waves-light amber darken-4"
         type="submit"
@@ -131,7 +101,6 @@
       <tr>
         <th>Nome Completo</th>
         <th>Nome de usuário</th>
-        <th>CPF</th>
         <th>Saldo</th>
         <th></th>
       </tr>
@@ -139,20 +108,18 @@
 
     <tbody>
       <tr *ngFor="let u of users">
-        <td>{{ u.name | titlecase }}</td>
+        <td>{{ u.nome | titlecase }}</td>
         <td>{{ u.username | lowercase }}</td>
-        <td>{{ u!.cpf! | cpf }}</td>
-        <td>{{ u.balance | currency: "BRL" }}</td>
+        <td></td>
         <td class="right">
           <a
-            ><i class="material-icons my-icon-size" (click)="onEdit(u)"
+            ><i class="material-icons my-icon-size"
               >edit</i
             ></a
           >
           <a
             ><i
               class="material-icons my-icon-size"
-              (click)="onDelete(u.username)"
               >delete</i
             ></a
           >
@@ -171,6 +138,4 @@
       </div>
     </div>
   </div>
-
-
 </div>

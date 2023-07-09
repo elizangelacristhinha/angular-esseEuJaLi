@@ -19,7 +19,7 @@ export class UserService {
   };
 
   getByUsername(username: string): Observable<User[]> {
-    const query: HttpParams = new HttpParams().set('username', username);
+    const query: HttpParams = new HttpParams().set('login', username);
     const options = username ? { params: query } : {};
 
     return this.httpClient.get<User[]>(`${RoutesAPI.USERS}`, options).pipe(

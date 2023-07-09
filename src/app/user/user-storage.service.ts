@@ -50,16 +50,4 @@ export class UserStorageService {
     this.users = WebStorageUtil.get(Constants.USERS_KEY);
     return this.users;
   }
-
-  notifyTotalUsers() {
-    this.userSource.next(this.getUsers()?.length);
-    // if (this.getUsers()?.length > 1) {
-    //   this.userSource.complete();
-    // }
-  }
-
-  asObservable(): Observable<number> {
-    return this.userSource;
-    //return this.userSource.asObservable()
-  }
 }

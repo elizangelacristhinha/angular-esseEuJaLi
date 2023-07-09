@@ -18,7 +18,7 @@
             name="input-username"
             type="text"
             class="validate"
-            (ngModel)="this.loginUser.username"
+            [(ngModel)]="this.loginUser.username"
           />
           <label for="input-username">Nome de Usuário</label>
         </div>
@@ -30,7 +30,7 @@
             name="input-password"
             type="password"
             class="validate"
-            (ngModel)="this.loginUser.password"
+            [(ngModel)]="this.loginUser.password"
           />
           <label for="input-password">Senha</label>
         </div>
