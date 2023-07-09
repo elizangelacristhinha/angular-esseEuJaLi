@@ -1,0 +1,58 @@
+<div class="container contact">
+  <h5>Lista de Livros</h5>
+  <h6>
+    Esta é a lista dos livros mais lidos do mundo.
+  </h6>
+  <hr />
+  <h6>Filtre pelos tipos de operação</h6>
+  <div class="row">
+    <div class="col s12 m6 right-align">
+      <label>
+        <input
+          type="checkbox"/>
+        <span>Título</span>
+      </label>
+    </div>
+    <div class="col s12 m6 left-align">
+      <label>
+        <input
+          type="checkbox"/>
+        <span>Autor</span>
+      </label>
+    </div>
+  </div>
+<form class="col s12">
+        <table>
+            <thead>
+                <td>ID</td>
+                <td>TÍTULO</td>
+                <td>AUTOR</td>
+                <td></td>
+            </thead>
+            <tbody>
+                <tr *ngFor="let livros of listaDeLivros">
+                    <td>{{livros.id}}</td>
+                    <td>{{livros.titulo}}</td>
+                    <td>{{livros.autor}}</td>
+                   <td>
+                      <button class="btn waves-effect waves-tea" 
+                              type="submit" 
+                              (click)="goToDetalhesByService(livros)">
+                              visualizar
+                              <app-livro>                                               
+                              </app-livro>    
+                      </button>                   
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+  </form>
+
+  <!-- link home -->
+  <div class="row">
+    <div class="col s12 m6 offset-m3 center">
+      <a href="/index.html"> VOLTAR AO MENU PRINCIPAL </a>
+    </div>
+  </div>
+  <!-- link home -->
+</div>

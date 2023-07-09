@@ -1,0 +1,12 @@
+{
+    "livros": [ 
+        { "id": 1, "titulo": "Titulo 1", "autor": "Autor 1"},
+        { "id": 2, "titulo": "Titulo 2", "autor": "Autor 2"},
+        { "id": 3, "titulo": "Titulo 3", "autor": "Autor 3"}
+    ],
+    "Usuarios": [ 
+        { "id": 1, "nome": "Usuário 1", "login": "login1", "senha": "123"},
+        { "id": 2, "nome": "Usuário 2", "login": "login2", "senha": "123"},
+        { "id": 3, "nome": "Usuário 3", "login": "login3", "senha": "123"}
+    ]
+}
