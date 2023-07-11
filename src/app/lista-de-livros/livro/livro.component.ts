@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ListaDeLivrosService } from '../lista-de-livros.service';
 import { DataService } from 'src/app/data.service';
+import { User } from 'src/app/model/user';
 
 @Component({
   selector: 'app-livro',
@@ -19,6 +20,7 @@ export class LivroComponent implements OnInit {
   public retorno: ListaDeLivros[];
   public livros: Observable<ListaDeLivros>;
   public visivel: boolean;
+  public user: User;
 
   constructor(
     private livroPromiseService: LivroPromiseService,
@@ -33,6 +35,8 @@ export class LivroComponent implements OnInit {
 
   ngOnInit(): void {
     this.livro = this.dataService.getLivro(); 
+    this.user = this.dataService.getUser();
+    console.log('usuario: ' + this.user.nome);
   }
 
   onClick(){

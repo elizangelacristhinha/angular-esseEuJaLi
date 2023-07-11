@@ -1,7 +1,11 @@
 <div class="container contact">
+  <h6>Seja bem vindo(a)... {{user.nome}}</h6>
+
   <h5>Lista de Livros</h5>
   <h6>
     Esta é a lista dos livros mais lidos do mundo.
+    Selecione para ler o resumo e marcar se já o leu
+    e ganhe pontos!
   </h6>
   <hr />
   <h6>Filtre pelos tipos de operação</h6>
@@ -28,6 +32,7 @@
                 <td>TÍTULO</td>
                 <td>AUTOR</td>
                 <td></td>
+                <td></td>
             </thead>
             <tbody>
                 <tr *ngFor="let livros of listaDeLivros">
@@ -38,9 +43,7 @@
                       <button class="btn waves-effect waves-tea" 
                               type="submit" 
                               (click)="goToDetalhesByService(livros)">
-                              visualizar
-                              <app-livro>                                               
-                              </app-livro>    
+                              visualizar   
                       </button>                   
                     </td>
                 </tr>

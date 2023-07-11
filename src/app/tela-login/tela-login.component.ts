@@ -33,7 +33,6 @@ export class TelaLoginComponent implements OnInit {
     this.userService.getByUsername(this.loginUser.username)
                   .subscribe(data => this.user = data[0],
                   error => this.errorMessage = <any>error);
-    console.log(this.user.login);
 
     if (
       this.loginUser.username === this.user.login &&
@@ -47,8 +46,5 @@ export class TelaLoginComponent implements OnInit {
         'Oppsss! Por favor, verifique seu nome de usuário ou senha e tente novamente!'
       );
     }
-
-
   }
-
 }

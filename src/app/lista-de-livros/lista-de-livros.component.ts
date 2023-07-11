@@ -4,7 +4,7 @@ import { ListaDeLivros } from './lista-de-livros';
 import { Router } from '@angular/router';
 import { Observable, Observer, Subject } from 'rxjs';
 import { DataService } from '../data.service';
-
+import { User } from '../model/user';
 @Component({
   selector: 'app-lista-de-livros',
   templateUrl: './lista-de-livros.component.html',
@@ -16,16 +16,17 @@ export class ListaDeLivrosComponent implements OnInit {
   public livros: Observable<ListaDeLivros>;
   public visivel: boolean;
   public livro: { id: string, titulo: string, autor: string };
+  public user: User;
 
   constructor(
     private router: Router, 
     private _listaDeLivrosService: ListaDeLivrosService,
     private dataService: DataService
-    ) { 
-
-    }
+    ) {}
 
   ngOnInit(): void {
+    this.user = this.dataService.getUser();
+    console.log('usuario: ' + this.user.login);
     this.visivel = false;
     this._listaDeLivrosService.getListaDeLivros()
     .subscribe(
@@ -35,7 +36,8 @@ export class ListaDeLivrosComponent implements OnInit {
                 return new ListaDeLivros(
                    iten.id,
                    iten.titulo,
-                   iten.autor
+                   iten.autor,
+                   iten.descricao
                 )
             }
           )
@@ -47,4 +49,5 @@ export class ListaDeLivrosComponent implements OnInit {
     this.dataService.setLivro(livro);
     this.router.navigateByUrl('/visualizarLivro');
   }
+
 }
