@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Constants } from '../util/constants';
-import { LoginService } from './../services/login.service';
 import { Router } from '@angular/router';
 import { User } from '../model/user';
 import { WebStorageUtil } from '../util/web-storage-util';
@@ -30,13 +29,15 @@ export class TelaLoginComponent implements OnInit {
   }
 
   onLogin() {
+    this.user = WebStorageUtil.get(Constants.USERNAME_KEY);
     this.userService.getByUsername(this.loginUser.username)
                   .subscribe(data => this.user = data[0],
                   error => this.errorMessage = <any>error);
+    console.log('nome: ' + this.user.username);
 
     if (
-      this.loginUser.username === this.user.login &&
-      this.loginUser.password === this.user.senha
+      this.loginUser.username === this.user.username &&
+      this.loginUser.password === this.user.password
       
     ) {
       this.dataService.setUser(this.user);

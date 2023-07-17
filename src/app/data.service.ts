@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ListaDeLivros } from './lista-de-livros/lista-de-livros';
+import { Pontos } from './lista-de-livros/pontos';
 import { User } from './model/user';
 
 @Injectable({
@@ -8,6 +9,7 @@ import { User } from './model/user';
 export class DataService {
   private livro: ListaDeLivros;
   private user: User;
+  private pontos: Pontos;
 
   constructor() { }
 
@@ -26,4 +28,13 @@ export class DataService {
   getUser(){
     return this.user;
   }
+
+  setPontos(pontos: Pontos){
+    this.pontos = pontos;
+  }
+
+  getPontos(){
+    return this.pontos;
+  }
+
 }

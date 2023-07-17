@@ -1,11 +1,9 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { catchError, map } from 'rxjs/operators';
-
 import { ErrorUtil } from './../util/error-util';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { RoutesAPI } from './../util/routes-api';
-import { Transaction } from './../model/transaction';
 import { User } from './../model/user';
 
 @Injectable({
@@ -26,17 +24,6 @@ export class UserService {
       //map((users: User[])=>users[0]),
       catchError(ErrorUtil.handleError)
     );
-  }
-
-  /**
-   * Lista as transações de um dado usuário.
-   * @param id
-   * @returns
-   */
-  listTransactionsByUser(id: string): Observable<Transaction[]> {
-    return this.httpClient
-      .get<Transaction[]>(`${RoutesAPI.TRANSACTIONS}/${id}/transactions`)
-      .pipe(catchError(ErrorUtil.handleError));
   }
 
   save(user: User): Observable<User> {

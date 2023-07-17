@@ -7,12 +7,12 @@ import { ListaDeLivrosComponent } from './lista-de-livros/lista-de-livros.compon
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { TelaLoginComponent } from './tela-login/tela-login.component';
-import { VisualizarLivroComponent } from './visualizar-livro/visualizar-livro.component';
 import { ExponentialStrengthPipe } from './pipes/exponential-strength.pipe';
 import { CadastrarUsuarioComponent } from './cadastrar-usuario/cadastrar-usuario.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LivroComponent } from './lista-de-livros/livro/livro.component';
+import { RankingComponent } from './ranking/ranking.component';
 @NgModule({
   declarations: [
     ExponentialStrengthPipe,
@@ -22,9 +22,9 @@ import { LivroComponent } from './lista-de-livros/livro/livro.component';
     FooterComponent,
     UserComponent,
     TelaLoginComponent,
-    VisualizarLivroComponent,
     CadastrarUsuarioComponent,
-    LivroComponent
+    LivroComponent,
+    RankingComponent
   ],
   imports: [
     BrowserModule,
