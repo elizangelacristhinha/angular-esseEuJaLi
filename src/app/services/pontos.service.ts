@@ -15,7 +15,7 @@ export class PontosService {
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-    
+
   };
 
   getByUsername(login: string): Observable<Pontos[]> {
@@ -25,13 +25,7 @@ export class PontosService {
     return this.httpClient.get<Pontos[]>(`${this.PONTOS}`, options).pipe(catchError(ErrorUtil.handleError));
   }
 
-  update2(pontos: Pontos): Observable<Pontos> {
-    
-    this.retorno = this.httpClient.put<Pontos>(`${this.PONTOS}/${pontos.id}`, pontos, this.httpOptions);
-    return this.retorno;
-  }
   update(pontos: Pontos){
-    //var pontosTmp = { id : pontos.id, pontos : pontos.pontos };
 
     this.httpClient.put(`${ this.PONTOS }/${ pontos.id }`, pontos)
             .subscribe(
@@ -50,28 +44,8 @@ export class PontosService {
               }
             );
   }
-  /*
-  https://www.devmedia.com.br/angular-http-como-realizar-requisicoes-em-suas-aplicacoes/40642
-  alterarProduto() {
-  var produto = { id : 1, nome : "Smart TV 50 Polegadas" };
 
-
-  this.http.put(`${ this.apiURL }/produtos/1`, produto)
-            .subscribe(
-              resultado => {
-                console.log('Produto alterado com sucesso.')
-              },
-              erro => {
-                switch(erro.status) {
-                  case 400:
-                    console.log(erro.error.mensagem);
-                    break;
-                  case 404:
-                    console.log('Produto não localizado.');
-                    break;
-                }
-              }
-            );
-}
-  */
+  getRanking(): Observable<Pontos[]> {
+    return this.httpClient.get<Pontos[]>(this.PONTOS);
+  }
 }

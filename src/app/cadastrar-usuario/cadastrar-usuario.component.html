@@ -9,17 +9,21 @@
         class="card-panel white-text"
         [class.red]="!this.isSuccess"
         [class.blue]="this.isSuccess"
-        *ngIf="this.isShowMessage"
-      >
+        *ngIf="this.isShowMessage">
         {{ this.message }}
       </div>
     </div>
     <form class="col s12" #form="ngForm" (submit)="onSubmit()">
       <div class="input-field col s12">
+        <input
+          id="input-name"
+          name="input-name"
+          type="text"
+          class="validate"
+          [(ngModel)]="this.user.nome"
+          #name="ngModel"
+          required/>
         <label for="input-name">Nome Completo *</label>
-        <div class="red-text">
-          Por favor, o nome completo é obrigatório.
-        </div>
         <span
           class="helper-text"
           data-error="O campo é inválido"
@@ -33,15 +37,15 @@
           name="input-username"
           type="text"
           class="validate"
-          (ngModel)="this.user.username"
-          pattern="^[a-z]+([\.-]?[a-z]+)*"
-          #username="ngModel"
-          required
-        />
+          [(ngModel)]="this.user.username"
+          #name="ngModel"
+          required/>
         <label for="input-username">Nome de Usuário *</label>
-        <div class="red-text" [hidden]="username.valid || username.untouched">
-          Por favor, informe o seu username em letras minúsculas e sem espaços.
-        </div>
+        <span
+        class="helper-text"
+        data-error="O campo é inválido"
+        data-success="Ok!"
+      ></span>
       </div>
 
       <div class="input-field col s12 l6">
@@ -50,15 +54,12 @@
           name="input-password"
           type="password"
           class="validate"
-          (ngModel)="this.user.password"
+          [(ngModel)]="this.user.password"
+          #name="ngModel"
           pattern="^[a-zA-Z0-9_@#\\&\\$]{6,18}$"
-          #password="ngModel"
           required
         />
         <label for="input-password">Senha *</label>
-        <div class="red-text" [hidden]="password.valid || password.untouched">
-          Por favor, nos informe a sua senha com pelo menos 6 caracteres!
-        </div>
       </div>
 
       <div class="input-field col s12 l6">
@@ -67,22 +68,17 @@
           name="input-user-repassword"
           type="password"
           class="validate"
-          (ngModel)="this.userRepassword"
-          #repassword="ngModel"
-          pattern="{{ password.value }}"
+          [(ngModel)]="this.userRepassword"
+          #name="ngModel"
+
           required/>
         <label for="input-user-repassword">Repita a senha *</label>
-        <div
-          class="red-text"
-          [hidden]="repassword.valid || repassword.untouched">
-          Por favor, repita a sua senha.
-        </div>
+
       </div>
 
       <button
         class="btn waves-effect waves-light amber darken-4"
-        type="submit"
-        [disabled]="!form.valid">
+        type="submit">
         Enviar
         <i class="material-icons right">send</i>
       </button>
@@ -97,16 +93,14 @@
         <th>Nome Completo</th>
         <th>Nome de usuário</th>
         <th>CPF</th>
-        <th>Saldo</th>
         <th></th>
       </tr>
     </thead>
 
     <tbody>
       <tr *ngFor="let u of users">
-        <td>{{ u.nome | titlecase }}</td>
-        <td>{{ u.username | lowercase }}</td>
-        <td></td>
+        <td>{{ u.login | titlecase }}</td>
+        <td>{{ u.nome | lowercase }}</td>
         <td></td>
         <td class="right">
           <a

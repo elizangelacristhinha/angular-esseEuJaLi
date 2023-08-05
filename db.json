@@ -37,6 +37,13 @@
       "nome": "António (login3)",
       "login": "login3",
       "senha": "123"
+    },
+    {
+      "login": "login1",
+      "password": "123",
+      "isAdmin": false,
+      "nome": "Mirtes (Login4)",
+      "id": 4
     }
   ],
   "Pontos": [

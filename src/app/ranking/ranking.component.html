@@ -1,1 +1,48 @@
-<p>ranking works!</p>
+<div class="container contact">
+  <h6>Seja bem vindo(a)...</h6>
+
+  <h5>Ranking de Pontos</h5>
+  <h6>
+    Esta é a lista de pontos dos usuários
+  </h6>
+  <hr />
+  <h6>Filtre pelos tipos</h6>
+  <div class="row">
+    <div class="col s12 m6 right-align">
+      <label>
+        <input
+          type="checkbox"/>
+        <span>Pontos</span>
+      </label>
+    </div>
+    <div class="col s12 m6 left-align">
+      <label>
+        <input
+          type="checkbox"/>
+        <span>Usuário</span>
+      </label>
+    </div>
+  </div>
+<form class="col s12">
+        <table>
+            <thead>
+                <td>Pontos</td>
+                <td>Usuário</td>
+            </thead>
+            <tbody>
+                <tr *ngFor="let linha of ranking">
+                    <td>{{linha.pontos}}</td>
+                    <td>{{linha.login}}</td>
+                </tr>
+            </tbody>
+        </table>
+  </form>
+
+  <!-- link home -->
+  <div class="row">
+    <div class="col s12 m6 offset-m3 center">
+      <a href="/index.html"> VOLTAR AO MENU PRINCIPAL </a>
+    </div>
+  </div>
+  <!-- link home -->
+</div>
