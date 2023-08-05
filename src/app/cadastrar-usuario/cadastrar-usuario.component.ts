@@ -6,6 +6,8 @@ import { Shared } from '../util/shared';
 import { User } from './../model/user';
 import { UserStorageService } from './user-storage.service';
 import { WebStorageUtil } from 'src/app/util/web-storage-util';
+import { UserService } from '../services/user.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-cadastrar-usuario',
@@ -16,7 +18,8 @@ import { WebStorageUtil } from 'src/app/util/web-storage-util';
 export class CadastrarUsuarioComponent implements OnInit {
   @ViewChild('form') form!: NgForm;
 
-  user!: User;
+  ret: Observable<User>;
+  user: User;
   users?: User[];
 
   userRepassword: string = '';
@@ -26,38 +29,57 @@ export class CadastrarUsuarioComponent implements OnInit {
   isSuccess!: boolean;
   message!: string;
 
-  constructor(private userService: UserStorageService) {}
+  constructor(private userService: UserService) {
+    this.user = new User('', '', '');
+  }
 
   ngOnInit(): void {
     Shared.initializeWebStorage();
-    this.user = new User('', '');
-    this.users = this.userService.getUsers();
+    this.user = new User('', '', '');
+
+    this.userService.getUsers()
+    .subscribe(
+        retorno => {
+          this.users = retorno.map (iten =>
+           {
+                return new User(
+                   iten.nome,
+                   iten.username,
+                   iten.login
+                )
+            }
+          )
+        }
+    )
+
   }
 
   onSubmit() {
     this.isSubmitted = true;
-    if (!this.userService.isExist(this.user.username)) {
-      this.userService.save(this.user);
-    } else {
-      this.userService.update(this.user);
-    }
+    this.userService.adicionar(this.user);
     this.isShowMessage = true;
     this.isSuccess = true;
     this.message = 'Cadastro realizado com sucesso!';
-
     this.form.reset();
-    this.user = new User('', '');
+    this.user = new User('', '', '');
 
-    this.users = this.userService.getUsers();
+    this.userService.getUsers()
+    .subscribe(
+        retorno => {
+          this.users = retorno.map (iten =>
+           {
+                return new User(
+                   iten.nome,
+                   iten.username,
+                   iten.login
+                )
+            }
+          )
+        }
+    )
 
-    this.userService.notifyTotalUsers();
   }
 
-  /**
-   * Realiza o clone do objeto, justamente para não refletir as mudanças
-   * imediatamente na lista de usuários cadastrados sem pressionar o submit.
-   * @param user
-   */
   onEdit(user: User) {
     //this.user = user;
     let clone = User.clone(user);
@@ -71,15 +93,6 @@ export class CadastrarUsuarioComponent implements OnInit {
     if (!confirmation) {
       return;
     }
-    let response: boolean = this.userService.delete(username);
-    this.isShowMessage = true;
-    this.isSuccess = response;
-    if (response) {
-      this.message = 'O item foi removido com sucesso!';
-    } else {
-      this.message = 'Opps! O item não pode ser removido!';
-    }
-    this.users = this.userService.getUsers();
-    this.userService.notifyTotalUsers();
+
   }
 }

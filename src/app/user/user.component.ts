@@ -30,7 +30,7 @@ export class UserComponent implements OnInit {
 
   ngOnInit(): void {
     Shared.initializeWebStorage();
-    this.user = new User('', '');
+    this.user = new User('', '', '');
     this.users = this.userService.getUsers();
   }
 

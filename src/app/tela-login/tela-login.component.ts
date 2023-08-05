@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Constants } from '../util/constants';
-import { LoginService } from './../services/login.service';
 import { Router } from '@angular/router';
 import { User } from '../model/user';
 import { WebStorageUtil } from '../util/web-storage-util';
@@ -19,26 +18,28 @@ export class TelaLoginComponent implements OnInit {
   public loginUser: User;
   private errorMessage: string;
 
-  constructor(private router : Router, 
+  constructor(private router : Router,
               private userService: UserService,
-              private dataService: DataService) 
+              private dataService: DataService)
               {}
 
   ngOnInit(): void {
-    this.loginUser = new User('', '');
-    this.user = WebStorageUtil.get(Constants.USERNAME_KEY);
+    this.loginUser = new User('', '', '');
+    this.user = new User('', '', '');
   }
 
   onLogin() {
     this.userService.getByUsername(this.loginUser.username)
                   .subscribe(data => this.user = data[0],
                   error => this.errorMessage = <any>error);
-    console.log(this.user.login);
+    console.log('nome: ' + this.user.username);
 
+     this.user.username = this.user.login;
+     this.user.password = this.user.senha;
     if (
-      this.loginUser.username === this.user.login &&
-      this.loginUser.password === this.user.senha
-      
+      this.loginUser.username === this.user.username &&
+      this.loginUser.password === this.user.password
+
     ) {
       this.dataService.setUser(this.user);
       this.router.navigate(['/listaDeLivros']);
@@ -47,8 +48,5 @@ export class TelaLoginComponent implements OnInit {
         'Oppsss! Por favor, verifique seu nome de usuário ou senha e tente novamente!'
       );
     }
-
-
   }
-
 }

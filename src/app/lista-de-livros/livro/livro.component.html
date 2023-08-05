@@ -1,14 +1,33 @@
-<table>
-    <thead>
-        <td>ID</td>
-        <td>TÍTULO</td>
-        <td>AUTOR</td>
-    </thead>
-    <tbody>
-        <tr>
-            <td>{{livro.id}}</td>
-            <td>{{livro.titulo}}</td>
-            <td>{{livro.autor}}</td>
-        </tr>
-    </tbody>
-</table>
+<div class="container contact">
+    <h6>Seja bem vindo(a)... {{user.nome}}</h6>
+    <h5>{{livro.id}} - {{livro.titulo}}</h5>
+    <form class="col s12">
+        <table>
+            <thead>
+                <td></td>
+                <td></td>
+                <td>AUTOR</td>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>{{livro.autor}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <td>DESCRIÇÃO</td>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{livro.descricao}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="btn waves-effect waves-tea" type="submit" (click)="marcarLido(livro)">
+        esse eu já li</button> 
+    </form>
+    <p>Meus Pontos: {{this.numPontos}}</p>
+</div>

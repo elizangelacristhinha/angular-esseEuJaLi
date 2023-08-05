@@ -103,9 +103,18 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "/angular-esseEuJaLi/"
+          }
         }
       }
     }
   },
-  "defaultProject": "angular-esseEuJaLi"
+  "defaultProject": "angular-esseEuJaLi",
+  "cli": {
+    "analytics": "311ce590-49eb-4fae-8873-d3ab0ca3c034"
+  }
 }

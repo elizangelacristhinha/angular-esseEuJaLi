@@ -1,17 +1,19 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { catchError, map } from 'rxjs/operators';
-
 import { ErrorUtil } from './../util/error-util';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { RoutesAPI } from './../util/routes-api';
-import { Transaction } from './../model/transaction';
 import { User } from './../model/user';
+import { Constants } from 'src/app/util/constants';
+import { WebStorageUtil } from 'src/app/util/web-storage-util';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
+  users!: User[];
+  ret: Observable<User>;
   constructor(private httpClient: HttpClient) {}
 
   httpOptions = {
@@ -28,31 +30,12 @@ export class UserService {
     );
   }
 
-  /**
-   * Lista as transações de um dado usuário.
-   * @param id
-   * @returns
-   */
-  listTransactionsByUser(id: string): Observable<Transaction[]> {
-    return this.httpClient
-      .get<Transaction[]>(`${RoutesAPI.TRANSACTIONS}/${id}/transactions`)
-      .pipe(catchError(ErrorUtil.handleError));
-  }
-
-  save(user: User): Observable<User> {
-    return this.httpClient.post<User>(
-      `${RoutesAPI.USERS}`,
-      user,
-      this.httpOptions
-    );
-  }
-
   patch(user: User): Observable<User> {
     return this.httpClient.patch<User>(
       `${RoutesAPI.USERS}/${user.id}`,
       user,
       this.httpOptions
-    );
+    );;
   }
 
   update(user: User): Observable<User> {
@@ -61,5 +44,23 @@ export class UserService {
       user,
       this.httpOptions
     );
+  }
+
+  getUsers(): Observable<User[]> {
+    return this.httpClient.get<User[]>(RoutesAPI.USERS);
+  }
+
+  adicionar(user: User) {
+    this.httpClient.post(`${ RoutesAPI.USERS }`, user)
+              .subscribe(
+                resultado => {
+                  console.log(resultado)
+                },
+                erro => {
+                  if(erro.status == 400) {
+                    console.log(erro);
+                  }
+                }
+              );
   }
 }

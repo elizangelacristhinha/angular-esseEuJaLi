@@ -1,12 +1,76 @@
 {
-    "livros": [ 
-        { "id": 1, "titulo": "Titulo 1", "autor": "Autor 1"},
-        { "id": 2, "titulo": "Titulo 2", "autor": "Autor 2"},
-        { "id": 3, "titulo": "Titulo 3", "autor": "Autor 3"}
-    ],
-    "Usuarios": [ 
-        { "id": 1, "nome": "Usuário 1", "login": "login1", "senha": "123"},
-        { "id": 2, "nome": "Usuário 2", "login": "login2", "senha": "123"},
-        { "id": 3, "nome": "Usuário 3", "login": "login3", "senha": "123"}
-    ]
+  "livros": [
+    {
+      "id": 1,
+      "autor": "J. R. R. Tolkien",
+      "titulo": "O Senhor dos Anéis",
+      "descricao": "A história se passa na Terra Média, nos últimos dias da Terceira Era do Mundo.\nEla é dividida em três grandes partes e conta as lutas travadas pela posse do Anel. Nos primórdios do tempo, os deuses forjaram Anéis do Poder e os deram às diversas raças que povoavam o mundo. Nove anéis foram dados aos reis dos homens, sete anéis aos reis dos anões e três anéis aos reis dos elfos. Entretanto, Sauron, um deus maligno, aprendeu o segredo da criação dos anéis e forjou O Anel, tão poderoso que era capaz de dominar todos os outros. De posse do Anel, ele espalhou o Mal sobre o mundo, escravizando os reis dos homens e transformando-os nos Cavaleiros Negros, servos do Anel. Numa batalha titânica entre as forças do Bem e do Mal que marcou o final da Segunda Era, o Anel foi arrancado de Sauron e as forças do Mal foram derrotadas. Sauron perdeu sua forma corporal e seu espírito ficou preso na Terra de Mordor.Poder e a derrota de Sauron, é contada no livro “O Silmarillion”. FONTE: https://paginadoricardo.wordpress.com/2020/01/27/resumo-o-senhor-dos-aneis-j-r-r-tolkien/"
+    },
+    {
+      "id": 2,
+      "autor": "Don Quixote",
+      "titulo": "Miguel de Cervantes",
+      "descricao": "A obra narra as aventuras e desventuras de Dom Quixote, um homem de meia idade que resolveu se tornar cavaleiro andante depois de ler muitos romances de cavalaria. Providenciando cavalo e armadura, resolve lutar para provar seu amor por Dulcineia de Toboso, uma mulher imaginária. Consegue também um escudeiro, Sancho Pança, que resolve acompanhá-lo, acreditando que será recompensado. Quixote mistura fantasia e realidade, se comportando como se estivesse em um romance de cavalaria. Transforma obstáculos banais (como moinhos de vento ou ovelhas) em gigantes e exércitos de inimigos. É derrotado e espancado inúmeras vezes, sendo batizado de Cavaleiro da Fraca Figura, mas sempre se recupera e insiste nos seus objetivos. Só volta para casa quando é vencido em batalha por outro cavaleiro e forçado a abandonar a cavalaria. Longe da estrada, fica doente e acaba morrendo. Nos seus momentos finais, recupera a consciência e pede perdão aos seus amigos e familiares. FONTE: https://www.culturagenial.com/livro-dom-quixote-de-miguel-de-cervantes/"
+    },
+    {
+      "id": 3,
+      "autor": "Um Conto de Duas Cidades",
+      "titulo": "Charles Dickens",
+      "descricao": "O olhar estrangeiro por vezes é capaz de captar minúcias que escapam ao olhar trivial. Em Um Conto de Duas Cidades, romance originalmente publicado em 1837, o escritor inglês Charles Dickens (1812-1870) realiza uma intrigante pintura da Revolução Francesa. Sem se ater às macroquestões do conflito, Dickens volta-se para a observação dos indivíduos pertencentes aos mais diversos estratos da sociedade francesa – desde a aristocracia, passando pela burguesia, até o povo miserável de Paris. Reunidos em uma trama que mescla aventura, romance e tragédia, tais personagens revelam-se, sobretudo, como pequenos retratos das consequências sociais da grande revolução burguesa. FONTE: https://revistacult.uol.com.br/home/um-conto-de-duas-cidades/"
+    }
+  ],
+  "Usuarios": [
+    {
+      "id": 1,
+      "nome": "Milene (login1)",
+      "login": "login1",
+      "senha": "123"
+    },
+    {
+      "id": 2,
+      "nome": "Vicente (login2)",
+      "login": "login2",
+      "senha": "123"
+    },
+    {
+      "id": 3,
+      "nome": "António (login3)",
+      "login": "login3",
+      "senha": "123"
+    },
+    {
+      "login": "login1",
+      "password": "123",
+      "isAdmin": false,
+      "nome": "Mirtes (Login4)",
+      "id": 4
+    }
+  ],
+  "Pontos": [
+    {
+      "someField": true,
+      "id": 1,
+      "login": "login1",
+      "pontos": 12
+    },
+    {
+      "id": 2,
+      "login": "login2",
+      "pontos": 0
+    },
+    {
+      "id": 3,
+      "login": "login3",
+      "pontos": 0
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    }
+  ]
 }
