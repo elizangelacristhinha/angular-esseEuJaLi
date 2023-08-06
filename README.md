@@ -8,7 +8,7 @@ O frontend da aplicação foi desenvolvido com Angular e o backend foi simulado 
 
 ## Protótipo
 
-https://www.figma.com/file/a1VDbO1aNfZyulQPxT99OE/beleza-em-dia?node-id=3%3A80
+nas pastas wireframes e wireframes-web
 
 ## Checklist
 
@@ -23,13 +23,15 @@ https://www.figma.com/file/a1VDbO1aNfZyulQPxT99OE/beleza-em-dia?node-id=3%3A80
 - [x] Criar navegação entre páginas por meio de rotas.
 - [x] Passar dados entre componentes que representam diferentes telas via parâmetros de rotas.
 
-- [] Validar campos do formulário com REGEX e apresentar os erros.
+- [x] Validar campos do formulário com REGEX e apresentar os erros.
 - [] Desabilitar o botão de submit enquanto o formulário está inválido.
 - [x] Fazer requisições a API com tratamento da resposta com Promises ou Observables.
 - [x] Cadastrar uma entidade no JSON Server.
 - [x] Apresentar uma lista de dados com a diretiva estrutural ngFor.
 - [x] Usar a diretiva ngIf
 
-- [] Formatar a apresentação de dados com Pipes.
-- [] Build e deploy da aplicação.
+- [x] Formatar a apresentação de dados com Pipes.
+- [x] Build e deploy da aplicação.(porém aprensentou erro e não exibiu. buid realizado conforme aula)
+elizangelacristhinha.github.io/angular-esseEuJaLi
+video teve que ser feito localmente.
 

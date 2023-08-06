@@ -44,6 +44,14 @@
       "isAdmin": false,
       "nome": "Mirtes (Login4)",
       "id": 4
+    },
+    {
+      "login": "",
+      "password": "123456",
+      "isAdmin": false,
+      "nome": "teste inserção usr",
+      "username": "login5",
+      "id": 5
     }
   ],
   "Pontos": [
@@ -51,7 +59,7 @@
       "someField": true,
       "id": 1,
       "login": "login1",
-      "pontos": 12
+      "pontos": 14
     },
     {
       "id": 2,
