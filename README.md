@@ -6,6 +6,8 @@ O frontend da aplicação foi desenvolvido com Angular e o backend foi simulado 
 
 ## Endereço de Deploy - GitHub Pages
 
+elizangelacristhinha.github.io/angular-esseEuJaLi
+
 ## Protótipo
 
 nas pastas wireframes e wireframes-web
@@ -34,4 +36,6 @@ nas pastas wireframes e wireframes-web
 - [x] Build e deploy da aplicação.(porém aprensentou erro e não exibiu. buid realizado conforme aula)
 elizangelacristhinha.github.io/angular-esseEuJaLi
 video teve que ser feito localmente.
+- [x] Video pasta wireframes-web 2023-08-06 07-26-46
+- [x] PDF com explicação wireframes-web FrameworksWeb-ProvaSegundaChamada
 
